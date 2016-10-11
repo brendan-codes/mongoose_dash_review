@@ -2,9 +2,12 @@
 
 ## How-to
 
-1. Fork this repo!
-2. Commit your finished code!
-3. Send a pull request!
-4. ???
-5. Profit!
+1. Git Clone
+2. Create Branch (brendan-branch)
+3. Create folder (brendan_s)
+4. Add files
+5. Push Branch
+6. Create Pull Request
+7. ????
+8. Profit!
 
