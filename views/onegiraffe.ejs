@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Giraffes</title>
+	</head>
+	<body>
+		<div>
+			<h3>Registered users</h3>
+			<p>Name: <%= giraffe.name %><p>
+			<p>Age: <%= giraffe.age %><p>
+			<form action="/giraffes/<%= giraffe._id %>/edit" method="get">
+				<input type="submit" value="Edit giraffe">
+			</form>
+			<form action="/" method="get">
+				<input type="submit" value="Go back">
+			</form>
+		</div>
+	</body>
+</html>
