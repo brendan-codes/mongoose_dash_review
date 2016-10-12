@@ -2,7 +2,7 @@
 
 ## How-to
 
-1. Git Clone
+1. FORK Repo
 2. Create Branch (ex: brendan-branch)
 3. Create folder (ex: brendan_s)
 4. Add files
