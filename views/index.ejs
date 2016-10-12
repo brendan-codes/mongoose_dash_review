@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pandas!</title>
+</head>
+<body>
+<h1>All the Pandas!</h1>
+  <div id="pandas">
+  <table>
+  <thead>
+  	<th>Name</th>
+  	<th>Age</th>
+    <th>Delete Panda :(</th>
+  </thead>
+  <tbody>
+  	<% console.log(pandas) %>
+  	<% for (index in pandas){ %>
+  	<tr>
+  		<td><a href="/pandas/<%= pandas[index]._id %>"><%= pandas[index].name %></a></td>
+  		<td><%= pandas[index].age %></td>
+      <!-- Does this have to be a form for POST? -->
+      <td><form action="/pandas/<%= pandas[index]._id %>/destroy" method="post"><input type="submit" value="DELETE!!!"></form></td>
+  	</tr>
+  	<% } %>
+  </tbody>
+  </table>
+  </div>
+  <br>
+  <a href="/pandas/new">add a panda!</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Form</title>
+</head>
+<body>
+<h1>Here is your Panda:</h1>
+
+  <div id="pandas">
+  <table>
+  <thead>
+    <th>Name</th>
+    <th>Age</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= pandas[0].name %></td>
+      <td><%= pandas[0].age %></td>
+    </tr>
+  </tbody>
+  </table>
+  <br>
+  <a href="/pandas/<%= pandas[0]._id %>/edit">Edit</a>
+  <br>
+  <a href="/">Home</a>
+  </div>
+</body>
+</html>
