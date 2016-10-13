@@ -1,20 +1,16 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Giraffes</title>
-	</head>
-	<body>
-		<div>
-			<h3>Edit this giraffe</h3>
-			<p>Name: <%= giraffe.name %><p>
-			<p>Age: <%= giraffe.age %><p>
-		</div>
-		<form action='/giraffes/<%= giraffe.id %>' method='post'>
-			Name: <input type='text' name='name'>
-			Age: <input type='text' name='age'>
-			<input type='submit' value='Submit'>
-		</form>
-		<form action="/" method="get">
-			<input type="submit" value="Go back">
-		</form>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <title>This is my edit view</title>
+  </head>
+  <body>
+      <form action = "/species/<%= animal._id %>" method = "post">
+        <%= animal._id %>
+        Animal:
+        <input type = "text" name = "Animal" value="<%= animal.Animal %>"><br>
+        <input type = "submit" value = "Submit">
+      </form>
+    <a href = "/">Back</a>
+  </body>
 </html>

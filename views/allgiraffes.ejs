@@ -1,24 +1,19 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Giraffes</title>
-	</head>
-	<body>
-		<div>
-			<form action="/giraffes/new" method="get">
-				<input type="submit" value="Add new giraffe">
-			</form>
-			<h3>All giraffes</h3>
-			<% for (i in all_giraffes) { %>
-				<p>Name: <a href="/giraffes/<%=all_giraffes[i]._id%>"> <%= all_giraffes[i].name %><p>
-				<p>Age: <%= all_giraffes[i].age %><p>
-				<p><%= all_giraffes[i]._id %></p>
-				<form action="/giraffes/<%= all_giraffes[i]._id %>/edit" method="get">
-					<input type="submit" value="Edit giraffe">
-				</form>
-				<form action="/giraffes/<%= all_giraffes[i]._id %>/destroy" method="post">
-					<input type="submit" value="Delete giraffe">
-				</form><br>
-			<% } %>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <title>This is my root file</title>
+  </head>
+  <body>
+    <a href = "/species/new">Create</a>
+    <% for(var animal of animals){ %>
+        <p>Animal: <%= animal.Animal %></p>
+        <a href = "/species/<%= animal._id %>">Show</a>
+        <a href = "/species/<%= animal._id %>/edit">Edit</a>
+        <form action = "/species/<%= animal._id %>/destroy" method = "post">
+          <input type = "submit" value = "delete">
+        </form>
+        <hr>
+    <% } %>
+  </body>
 </html>
