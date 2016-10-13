@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>This is my edit view</title>
+  </head>
+  <body>
+      <form action = "/species/<%= animal._id %>" method = "post">
+        <%= animal._id %>
+        Animal:
+        <input type = "text" name = "Animal" value="<%= animal.Animal %>"><br>
+        <input type = "submit" value = "Submit">
+      </form>
+    <a href = "/">Back</a>
+  </body>
+</html>
