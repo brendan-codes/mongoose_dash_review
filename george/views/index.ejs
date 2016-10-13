@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gorilla Family</title>
+</head>
+<body>
+	<h1>Gorilla Family</h1>
+<% for (var i in users) { %>
+	<form>
+		<label>Name: <%= users[i].name %></label>
+		<label>Age: <%= users[i].age %></label>
+	</form>
+	<a href="/gorillas/<%= users[i].id %>"><button>Show</button></a>
+	<a href="/gorillas/<%= users[i].id %>/edit"><button>Edit</button></a>
+	<a href="/gorillas/<%= users[i].id %>/destroy"><button>Delete</button></a>
+	<br>
+<% } %>
+<br>
+<a href="/new"><button>Add Gorilla</button></a>
+</body>
+</html>
