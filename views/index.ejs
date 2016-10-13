@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Mongoose Intro</title>
+	<meta charset="utf-8">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container" style="margin-top: 25px; margin-bottom: 15px;">
+		<form action="/new" class="col-lg-6 col-md-8">
+		  <input type="submit" class="btn btn-lg btn-success" value="Add A New Puppy!">
+		</form>
+	</div>
+	<% for (idx in puppy) { %>
+		<div class="container">
+			<h3>Name: <%= puppy[idx].name %></h3>
+			<form action="/puppies/<%= puppy[idx]._id %>" style="margin: 10px 10px 0px 0px; display: inline-block;">
+				<input type="submit" class="btn btn-info" value="More Info">
+			</form>
+			<form action="/<%= puppy[idx]._id %>/edit" style="margin: 10px 10px 0px 0px; display: inline-block;">
+				<input type="submit" class="btn btn-warning" value="Edit">
+			</form>
+			<form action="/<%= puppy[idx]._id %>/destroy" method="post" style="margin: 10px 10px 0px 0px; display: inline-block;">
+				<input type="submit" class="btn btn-danger" value="Delete">
+			</form>
+		</div>
+		<hr>
+	<% } %>
+</body>
+</html>
