@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>To Edit</title>
+</head>
+<body>
+
+To Edit <%= animal.name %> 
+<form action='/mongooses/<%= animal.id%>' method='POST'>
+Animal:<input type='text' name='animal' value= "<%= animal.animal %>"><br>
+Name:<input type='text' name='name' value= "<%= animal.name %>"><br>
+Age:<input type='text' name='age' value= "<%= animal.age %>"><br>
+<input type='submit' value='Edit'>
+</form>
+
+
+
+
+</body>
+</html>
