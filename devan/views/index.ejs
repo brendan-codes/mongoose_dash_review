@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Main Page </title>
+</head>
+<body>
+
+Display ALL animals:
+<br>
+<br>
+<% for(var i=0; i<animals.length; i++) { %>
+	<% var animal = animals[i] %>
+	<p>Animal: <%= animal.animal %></p>
+	<p>Name: <%= animal.name %></p> 
+	<p>Age: <%= animal.age %></p> 
+	<a href="/mongooses/<%= animal.id%>/edit">Edit</a>
+	<form action="/mongooses/<%= animal.id%>/destroy" method='post'><input type="submit" value="Delete"></form>
+<% }%> 
+
+<form action='/mongooses/new'>
+<input type='submit' value='Add Animal'>
+</form>
+<hr>
+
+</body>
+</html>
