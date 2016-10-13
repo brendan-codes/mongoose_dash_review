@@ -1,0 +1,17 @@
+#wrapper{
+	width: 400px;
+	margin: auto ;
+	border: 1px solid silver;
+	padding: 10px;
+	text-align: center;
+}
+.textarea{
+	width: 300px;
+	margin-left: 10px;
+}
+td, label {
+	padding-left: 10px;
+}
+.button{
+	margin-left: 10px;
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mongoose Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <h1>Mongoose Dashboard</h1>
+        <form action="/mongooses" method="post">
+        <div id='all_users'></div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" aria-describedby="name" placeholder="Enter name">
+            <small id="nameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="info">Info</label>
+            <textarea class="form-control" name="info" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <h2>May Node and Express be with you.</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Information</th>
+              <th> Edit </th>
+              <th> View </th>
+              <th> Delete </th>
+            </tr>
+          </thead>
+          <tbody>
+          <% for (mongoose in mongooses) { %>
+            <tr>
+              <th><a href="/<%= mongooses[mongoose]._id %>/view/"><%= mongooses[mongoose].name %></a></th>
+              <th><a href="/<%= mongooses[mongoose]._id %>/view/"><%= mongooses[mongoose].info %></a></th>
+              <th><a href="/<%= mongooses[mongoose]._id %>/edit/" class="btn btn-primary btn-sm" role="button" aria="true">Edit</a></th>
+              <th><a href="/<%= mongooses[mongoose]._id %>/view/" class="btn btn-primary btn-sm" role="button" aria="true">View</a></th>
+              <th>
+                <form action="/<%= mongooses[mongoose]._id %>/delete/" method='post'>
+                <input type="submit" value="Delete">
+                </form>
+              </th>
+            </tr>
+          <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
