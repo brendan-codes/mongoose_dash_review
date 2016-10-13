@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dragon Makers</title>
+  </head>
+  <body>
+    <h1>Dragons</h1>
+    <a href="/new">Add Dragon</a>
+    <hr>
+    <% for (var x in dragons) { %>
+      <h2><%= dragons[x].name %></h2>
+      <h2>Age: <%= dragons[x].age %></h2>
+      <h2>Color: <%= dragons[x].color %></h2>
+      <a href="/<%=dragons[x]._id%>/edit">Edit</a>
+      <form action="/<%=dragons[x]._id%>/delete" method="post">
+        <input type="submit" value="Delete">
+      </form>
+      <hr>
+      <% } %>
+  </body>
+</html>
