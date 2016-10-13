@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gorilla Dashboard</title>
+</head>
+<body>
+<h1>Gorilla Edit</h1>
+<form action="/gorillas/<%= user._id %>" method="post">
+	<input type="text" name="name" value="<%= user.name %>">
+	<input type="text" name="age" value="<%= user.age %>">
+	<input type="submit" name="submit" value="Update">
+</form>
+</body>
+</html>
