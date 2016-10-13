@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Meese Dash</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class='container'>
+      <div class='col-sm-8 col-sm-offset-2'  style='padding:10px'>
+        <a href='/'><h2>Meese Dash</h2></a>
+        <h4>Edit a meese</h4>
+        <table class='table'>
+          <tr><th>Name</th><th>Age</th></tr>
+          <%for (x in meese){%>
+          <tr>
+            <td><%= meese[x]['name']%></td>
+            <td><%= meese[x]['age']%></td>
+          </tr>
+          <%}%>
+        </table>
+        <form id='myform' action='/meese/<%=meese[0]['_id']%>' method='post'>
+          <label for='name'>New name:</label>
+          <input type='text' name='name' id='name' placeholder='<%= meese[0]['name']%>'><br />
+          <label for='name'>New age:</label>
+          <input type='text' name='age' id='age' placeholder='<%= meese[0]['age']%>'><br />
+          <input type='submit' class='btn btn-info'/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

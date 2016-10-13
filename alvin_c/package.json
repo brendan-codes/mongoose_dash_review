@@ -1,20 +1,10 @@
 {
-<<<<<<< HEAD
-  "name": "Mongoose_Dash",
+  "name": "intro",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-=======
-  "name": "basic_mongoose_app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
->>>>>>> 68491cae855540f3e54f7a1e23cee68c92ed1147
   },
   "keywords": [],
   "author": "",
