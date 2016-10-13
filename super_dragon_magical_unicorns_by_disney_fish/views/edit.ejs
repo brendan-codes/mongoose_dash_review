@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Info</title>
+  </head>
+  <body>
+    <h1>Edit info about <%= dragon[0].name %> the dragon here</h1>
+    <form action="/update/<%=dragon[0]._id%>" method="post">
+      <input type="text" name="name" placeholder="Name" value="<%= dragon[0].name %>">
+      <input type="text" name="age" placeholder="Age" value="<%= dragon[0].age %>">
+      <input type="text" name="color" placeholder="Color" value="<%= dragon[0].color %>">
+      <input type="submit" value="Edit">
+      <button onclick="location.href = '/';" type="button">Home</button>
+    </form>
+  </body>
+</html>
