@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mongo Dashboard</title>
+	<style type="text/css">
+		form{
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<h1>Mongo Dashboard Assignment</h1>
+	<%= mongooses %>
+	<% for (var i = 0; i < mongooses.length; i++){ %>
+		<li>Name: <%= mongooses[i].name %> | Create at: <%= mongooses[i].createdAt %>
+			<button><a href="/mongooses/<%= mongooses[i]._id %>">Show</a></button>
+			<form action="/mongooses/<%= mongooses[i]._id %>/edit">
+				<input type="submit" value="Edit">
+			</form>
+			<form action="/mongooses/<%= mongooses[i]._id %>/destroy" method="post">
+				<input type="submit" value="Destroy">
+			</form>
+		</li>
+
+	<% } %>
+
+	<button><a href="/mongooses/new">Create a new mongoose</a></button>
+</body>
+</html>
