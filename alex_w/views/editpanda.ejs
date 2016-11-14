@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Form</title>
+</head>
+<body>
+<h1>Edit My Panda (<%= pandas[0].name %>)</h1>
+  <form action="/pandas/<%= pandas[0]._id %>" method="post">
+    <div id="name">
+      <label for="name">Panda Name: </label>
+      <input type="text" name="name" value="<%= pandas[0].name %>">
+    </div>
+    <div id="age">
+      <label for="age">Panda Age: </label>
+      <input type="number" name="age" value="<%= pandas[0].age %>">
+    </div>
+    <input type="submit" value="Edit My Panda!">
+  </form>
+  <br>
+  <a href="/pandas/<%= pandas[0]._id %>">Go Back</a>
+  <br>
+  <a href="/">Home</a>
+</body>
+</html>
